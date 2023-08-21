@@ -152,8 +152,9 @@
     font-weight:600px;
   }
   .last-row{
-    display:flex;
+    display: flex;
     padding-top:30px;
+    font-family: Nunito Sans;
   }
 
 
