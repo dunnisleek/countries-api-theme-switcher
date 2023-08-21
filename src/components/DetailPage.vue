@@ -145,6 +145,7 @@
   .details-righthand h4{
     text-align: left;
     padding-bottom: 15px;
+    font-family: Nunito Sans;
   }
   .details-righthand span{
   color:hsl(0, 1%, 41%);
