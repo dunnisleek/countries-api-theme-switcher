@@ -14,7 +14,7 @@
             <div>
               <!-- <h4>Native Name: {{country.name.nativeName.deu.common}}</h4> -->
               <h4>Native Name: <span class="red">{{ country.name.common }}, {{ country.name.official }}</span></h4>
-              <h4>Population: <span>{{country.population}} </span></h4>
+              <h4>Population: <span>{{formatPopulation(country.population)}} </span></h4>
               <h4>Region: <span>{{country.region }}</span></h4>
               <h4> Sub Region: <span>{{country.subregion }}</span></h4>
               <!-- <h4>Capital : {{country.capital }}</h4> -->
@@ -51,7 +51,7 @@
      <script>
     import NavBar from '@/navigation/NavBar.vue';
      import axios from 'axios'
-     import {getCapital, getLanguages, getBorders,getTld} from '@/UtilityFunction';
+     import {getCapital, getLanguages, getBorders,getTld,formatPopulation} from '@/UtilityFunction';
    
      export default {
        name: 'detailPage',
@@ -68,22 +68,23 @@
          getLanguages,
          getBorders,
         getTld,
+        formatPopulation,
          goBack(){
           this.$router.go(-1)
          },
       
 
        },
-    
-    
-      
+
+
        created() {
-        this.id= this.$route.params.id
-        axios.get(`https://restcountries.com/v3.1/all?id=${this.id}`).then((response) =>{
-          console.log(response.data)
-          this.country = response.data[this.id]
-        })
-       },
+  this.countryName = this.$route.params.countryName;
+  axios.get(`https://restcountries.com/v3.1/all`).then((response) => {
+    console.log(response.data);
+    // Find the country in the response data based on the countryName
+    this.country = response.data.find((country) => country.name.common === this.countryName);
+  });
+},
 
      };
      </script>

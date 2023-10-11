@@ -36,7 +36,15 @@ export function getLanguages(languages) {
        }
      }
 
-  
+  //this is for the commas in population figures
+
+  export function formatPopulation(population) {
+    return population.toLocaleString();
+  }
 
 
 //am using this to loop through an array inside an array capital:['brazil']
+
+export function slugify(str){
+  return str.replace(/\s+/g, "-").toLowerCase()
+}

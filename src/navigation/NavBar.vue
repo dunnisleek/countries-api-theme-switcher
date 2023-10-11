@@ -52,17 +52,20 @@ nav{
        justify-content: space-between;
        align-content: center;
        align-items: center;
-       padding:15px 7rem;
+       padding:28px 0rem;
+       margin:0 auto;
        box-shadow: 0px 10px 5px  hsl(0, 3%, 98%); 
        /* box-shadow: 0px 10px 5px #f5f4f4; */
-       /* width:1440px; */
+       max-width:87%;
+       width:100%
     
 }
 h2{
-       font-size:20px;
+       font-size:23px;
        line-height: 25px;
        font-weight:800;
        font-family: Nunito Sans;
+       padding-left:20px;
 }
 
 .switcher{
@@ -73,6 +76,7 @@ h2{
        text-transform: capitalize;
        font-family: Nunito Sans;
        color:  hsl(207, 26%, 17%);
+       padding-right:20px;
        /* color:hsl(200, 15%, 8%); */
 }
 .dark-theme {
@@ -153,7 +157,7 @@ h2{
 
 /* to change the icon to white in searchbox */
 .dark-theme .fa-search{
-       color:#ffffff;
+       /* color:#ffffff; */
 }
 .dark-theme .loadspin{
        color:#ffffff;
