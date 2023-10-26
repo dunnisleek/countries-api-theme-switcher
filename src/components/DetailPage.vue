@@ -59,7 +59,12 @@
        data() {
          return {
            country: null,
-           id:''
+           id:'',
+           colorMap:{
+            'Country1': 'red',
+        'Country2': 'blue',
+        'Country3': 'green',
+           }
          };
        },
        methods: {
@@ -72,6 +77,10 @@
          goBack(){
           this.$router.go(-1)
          },
+         getColorForCountry(country){
+          return this.colorMap[country] || 'gray'; // Default to gray if not found
+      
+         }
       
 
        },
@@ -132,7 +141,7 @@
   }
   .column-1 img{
     width:500px;
-    height:50vh;
+    height:350px;
     object-fit: cover;
   }
   .column-2 h2{
@@ -142,6 +151,7 @@
     font-weight: 600;
     padding-bottom: 30px;
     text-align: left;
+    margin-left: -20px;
   }
   .details-righthand h4{
     text-align: left;
